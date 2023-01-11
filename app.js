@@ -9,7 +9,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL)
 const Queue = require("bull")
 const REDIS_URL = process.env.REDIS_URL
 
-// Création d'une file de JOBs (stockée sur Redis) gérée par Bull
+// Création d'une file de JOBs (stockée sur Redis) gérée par Bull.
 let workQueue = new Queue("queueEcheanceTodos", REDIS_URL)
 
 app.get("/", function (req, res) {
